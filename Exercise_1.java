@@ -1,18 +1,36 @@
-class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+// Time Complexity : Push, Pop, Peek and isEmpty are all O(1) as we did not need to iterate through the array
+// Space Complexity : O(n) where n is MAX or size of array
+// Did this code successfully run on Leetcode : N/A
+// Any problem you faced while coding this : None
+// Code here along with comments explaining your approach
+class Stack {
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack
+    /*
+    Initializes top to -1 by default on creation of any stack instance
+    @param : None
+    @return : None
+     */
     Stack()
     {
       this.top = -1;
     }
+    /*
+    Checks if stack is empty by checking value of top which is maintained based on array index
+    @param : None
+    @return : true if top == -1 and false otherwise
+     */
     boolean isEmpty() 
     { 
        return this.top == -1;
     }
-
+    /*
+       If index is max capacity returns false.
+       Otherwise initializes index of top and adds element to array which already has max capacity
+       @param : None
+       @return : true if push is a success and false otherwise
+    */
     boolean push(int x) 
     { 
         if(this.top == MAX - 1){
@@ -22,8 +40,13 @@ class Stack {
             a[this.top] = x;
             return true;
         }
-    } 
-  
+    }
+    /*
+        If isEmpty then returns 0.
+        Otherwise top holds the index of the last inserted item. top is reduced and the element previously at the position is returned
+        @param : None
+        @return : 0 if empty and popped item if not
+     */
     int pop() 
     { 
         if(isEmpty()){
@@ -34,8 +57,13 @@ class Stack {
             return poppedItem;
 
         }
-    } 
-  
+    }
+    /*
+         If isEmpty then returns 0.
+         Otherwise top holds the index of the last inserted item. Ele at top index is returned
+         @param : None
+         @return : 0 if empty and top item if not
+      */
     int peek() 
     { 
        if(isEmpty()){

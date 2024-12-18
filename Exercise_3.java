@@ -1,14 +1,14 @@
-import java.io.*;
-
-// Java program to implement
-// a Singly Linked List
+// Time Complexity : O(n) where n is size of SLL as we need to iterate through the list to insert in the end or print them all
+// Space Complexity : O(n) where n is size of SLL
+// Did this code successfully run on Leetcode : N/A
+// Any problem you faced while coding this : None
+// Code here along with comments explaining your approach
 class LinkedList {
 
     Node head; // head of list
-
-    // Linked list Node.
-    // This inner class is made static
-    // so that main() can access it
+    /*
+        Node class which has data of node and pointer to next
+    */
     static class Node {
 
         int data;
@@ -22,7 +22,14 @@ class LinkedList {
         }
     }
 
-    // Method to insert a new node
+    /*
+        Creates a new node
+        If the list's head is null assigns it to the head
+        If not loops through the list until last node is found
+        Assigns last node's next pointer to newly created node
+        @param : List and data of new node
+        @return : Updated List
+     */
     public static LinkedList insert(LinkedList list, int data)
     {
         Node node = new Node(data);
@@ -38,7 +45,11 @@ class LinkedList {
         return list;
     }
 
-    // Method to print the LinkedList.
+    /*
+       Loops through the entire list and prints each nodes data
+       @param : List
+       @return : None
+    */
     public static void printList(LinkedList list)
     {
         Node curr = list.head;
