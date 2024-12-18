@@ -10,11 +10,7 @@ class Stack {
     }
     boolean isEmpty() 
     { 
-       if(this.top == -1){
-           return true;
-       } else {
-           return false;
-       }
+       return this.top == -1;
     }
 
     boolean push(int x) 
@@ -55,13 +51,17 @@ class Main {
     public static void main(String args[]) 
     { 
         Stack s = new Stack(); 
-        s.push(10); 
-        s.push(20); 
-        s.push(30); 
+        boolean ten =s.push(10);
+        System.out.println("Push 10 into stack success "+ ten);
+        boolean twenty = s.push(20);
+        System.out.println("Push 20 into stack success "+ twenty);
+        boolean thirty = s.push(30);
+        System.out.println("Push 30 into stack success "+ thirty);
         System.out.println(s.pop() + " Popped from stack");
         System.out.println(s.pop() + " Popped from stack");
+        System.out.println(s.peek() + " Peek from stack");
+        System.out.println("Stack is empty " + s.isEmpty());
         System.out.println(s.pop() + " Popped from stack");
-        System.out.println(s.pop() + " Popped from stack");
-
-    } 
+        System.out.println("Stack is empty " + s.isEmpty());
+    }
 }
