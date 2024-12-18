@@ -3,33 +3,50 @@ class Stack {
   //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000; 
     int top; 
-    int a[] = new int[MAX]; // Maximum size of Stack 
-  
+    int a[] = new int[MAX]; // Maximum size of Stack
+    Stack()
+    {
+      this.top = -1;
+    }
     boolean isEmpty() 
     { 
-        //Write your code here 
-    } 
+       if(this.top == -1){
+           return true;
+       } else {
+           return false;
+       }
+    }
 
-    Stack() 
-    { 
-        //Initialize your constructor 
-    } 
-  
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        if(this.top == MAX - 1){
+            return  false;
+        } else {
+            this.top = this.top + 1;
+            a[this.top] = x;
+            return true;
+        }
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(isEmpty()){
+            return 0;
+        } else {
+            int poppedItem = a[this.top];
+            this.top = this.top - 1;
+            return poppedItem;
+
+        }
     } 
   
     int peek() 
     { 
-        //Write your code here
+       if(isEmpty()){
+           return 0;
+       } else {
+           return a[this.top];
+       }
     } 
 } 
   
@@ -41,6 +58,10 @@ class Main {
         s.push(10); 
         s.push(20); 
         s.push(30); 
-        System.out.println(s.pop() + " Popped from stack"); 
+        System.out.println(s.pop() + " Popped from stack");
+        System.out.println(s.pop() + " Popped from stack");
+        System.out.println(s.pop() + " Popped from stack");
+        System.out.println(s.pop() + " Popped from stack");
+
     } 
 }
